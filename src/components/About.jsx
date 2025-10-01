@@ -95,7 +95,7 @@ export default function About() {
     setSelectedBelief(null);
   };
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('aboutProphetWTMilton')}</h2>
@@ -109,12 +109,14 @@ export default function About() {
             experience a victorious and purposeful life in God’s word.
           </p>
           {!showFullAbout && (
-            <button
-              onClick={() => setShowFullAbout(true)}
-              className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 hover:scale-105 shadow-md"
-            >
-              {t('showMore')}
-            </button>
+            <div className="text-center">
+              <button
+                onClick={() => setShowFullAbout(true)}
+                className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 hover:scale-105 shadow-md"
+              >
+                {t('showMore')}
+              </button>
+            </div>
           )}
           {showFullAbout && (
             <>

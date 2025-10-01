@@ -2,6 +2,9 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Georgia', 'serif'],
+      },
       animation: {
         'fade-in': 'fade-in 0.3s ease-out',
         'scale-in': 'scale-in 0.3s ease-out',

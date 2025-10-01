@@ -7,11 +7,11 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function Footer() {
   const { t } = useLanguage();
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-gray-900 text-white py-8 sm:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-8 text-center sm:text-left">
           <div>
-            <div className="flex items-center mb-4">
+            <div className="flex items-center justify-center sm:justify-start mb-4">
               <img src={logo} alt="IFCM Logo" className="h-10 w-10 sm:h-12 sm:w-12 mr-2" />
               <div>
                 <h3 className="font-bold text-base sm:text-lg">IFCM</h3>
@@ -50,7 +50,7 @@ export default function Footer() {
               <p>{t('phone')}</p>
               <p>{t('email')}</p>
             </div>
-            <div className="flex gap-3 mt-4">
+          <div className="flex gap-3 mt-4 justify-center sm:justify-start">
               <a href="https://www.facebook.com/increasingfaithofchristministryinternational?mibextid=ZbWKwL" className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
                 <Facebook size={14} />
               </a>
