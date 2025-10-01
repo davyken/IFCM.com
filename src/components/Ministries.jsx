@@ -41,7 +41,7 @@ export default function Ministries() {
   ];
 
   return (
-    <section id="ministries" className="py-20 bg-white">
+    <section id="ministries" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Ministries</h2>
@@ -51,8 +51,8 @@ export default function Ministries() {
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {ministries.map((ministry, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-              <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${ministry.color} rounded-full flex items-center justify-center mb-4 sm:mb-6 text-2xl sm:text-3xl`}>
+            <div key={idx} className="bg-gradient-to-br from-gray-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-center">
+              <div className={`w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br ${ministry.color} rounded-full flex items-center justify-center mb-4 sm:mb-6 text-2xl sm:text-3xl mx-auto`}>
                 {ministry.icon}
               </div>
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">{ministry.name}</h3>

@@ -9,6 +9,7 @@ import Forms from './Forms';
 import Give from './Give';
 import Contact from './Contact';
 import { useLanguage } from '../contexts/LanguageContext';
+import pastor from '../assets/pastor.jpg';
 
 // Leadership Component
 function Leadership() {
@@ -25,7 +26,7 @@ function Leadership() {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <img src="/src/assets/pastor.jpg" alt="Prophet W.T. Milton" className="w-48 h-48 rounded-full object-cover" />
+              <img src={pastor} alt="Prophet W.T. Milton" className="w-48 h-48 rounded-full object-cover" />
               <div className="flex-1 text-center md:text-left">
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">Prophet W.T. Milton</h3>
                 <p className="text-xl text-amber-700 mb-4">{t('seniorPastorFounder')}</p>
