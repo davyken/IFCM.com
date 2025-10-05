@@ -8,7 +8,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
   const activeSection = location.pathname === '/' ? 'home' : location.pathname.slice(1);
-  const { toggleLanguage, t } = useLanguage();
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,6 +59,7 @@ export default function Navbar({ isMenuOpen, toggleMenu }) {
             >
               <Languages size={20} />
             </button>
+            <span className="ml-2 text-amber-700 font-semibold">{language.toUpperCase()}</span>
           </div>
 
           <button onClick={toggleMenu} className="md:hidden text-gray-700">

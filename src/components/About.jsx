@@ -103,10 +103,7 @@ export default function About() {
         </div>
         <div className="max-w-4xl mx-auto space-y-6 text-gray-700 leading-relaxed text-justify">
           <p>
-            Prophet WT.Milton.
-            Through an anointed ministry spanning over 10 years, Pastor, teacher, healing minister,
-            writer and recording Music minister and best-selling, Prophet WT. Milton has helped millions
-            experience a victorious and purposeful life in God’s word.
+            {t('prophetWTMiltonIntro')}
           </p>
           {!showFullAbout && (
             <div className="text-center">
@@ -121,51 +118,27 @@ export default function About() {
           {showFullAbout && (
             <>
               <p>
-                He is the author of the best-seller My Family Must See Light, the number one family Prayer
-                and Bible-study guide. He has also written several books worth reading like The step up
-                series , Compulsory Training manual for workers and leaders , Essential truths for Christian
-                believers and a host of other training manuals and tracks.
+                {t('prophetWTMiltonBooks')}
               </p>
               <p>
-                Prophet WT Milton pastors one of the largest congregations in Yaoundé - Cameroon. He
-                holds massive prophetic Prayers , teaching , healing and deliverance services like
-                Commanding the year Fasting and prayers , This mountain must be removed , My Family
-                Must see light ,The army must drown , healing services and Prophetic healing and
-                deliverance services with thousands in attendance globally.
+                {t('prophetWTMiltonMinistry')}
               </p>
               <p>
-                The world-renowned Prophetic, Healing and deliverance ministry of Prophet WT .Milton has
-                helped many receive their healing and miracles through the gifts of the Spirit in operation.
+                {t('prophetWTMiltonGifts')}
               </p>
               <p>
-                With a burning desire to bring God’s word to all men in simplicity and with the power of the
-                spirit, the man of God,
-                Prophet WT Milton has established the IFC foundation school for new converts and the IFC
-                School Of Ministry, specifically to train and equip ministers of the gospel of Christ, building in
-                them the realities of God’s word and empowering them to carry the message of eternal life in
-                Christ Jesus to their world with Power and Character.
+                {t('prophetWTMiltonSchools')}
               </p>
               <p>
-                Prophet WT Milton is creating impact through his philanthropic works in areas of health as
-                a trained and experienced health personnel attending to the sick and treating them of
-                sicknesses and his yearly academic scholarship program aimed at eradicating the obstacle
-                of financial constraints.
+                {t('prophetWTMiltonPhilanthropy')}
               </p>
-              <h3 className="text-2xl text-justify font-bold mt-8 mb-4">About IFC</h3>
+              <h3 className="text-2xl text-justify font-bold mt-8 mb-4">{t('aboutIFC')}</h3>
               <p>
-                Experience The Power of God
-                Increasing Faith of Christ ministries International is a dynamic Pentecostal Christian Church
-                founded by the man of God – Prophet WT Milton. It is a big family of power, glory and the
-                unfathomable flow of God’s blessings. God continues to increase this family, even as he
-                continues to show his mighty works through our founder – Prophet WT Milton . We are
-                located in Yaoundé Cameroun, where God's Presence and power is saving, healing and
-                restoring human destinies and dignities!
+                {t('experiencePowerOfGod')}
+                {t('ifcDescription')}
               </p>
               <p>
-                Upon God’s divine instruction, Prophet WT Milton got the directive to start this ministry and
-                also the name to give it. He named the ministry “Increasing Faith of Christ” in total obedience
-                to the word of God. Increasing Faith of Christ ministries was founded on the 28th of April
-                with 29 members and has since then grown to higher heights.
+                {t('ifcFoundation')}
               </p>
               <button
                 onClick={() => setShowFullAbout(false)}
@@ -191,7 +164,7 @@ export default function About() {
               >
                 <h3 className="text-xl font-bold text-amber-900 mb-3 group-hover:text-amber-700 transition-colors">{belief.title}</h3>
                 <p className="text-gray-700 text-sm leading-relaxed group-hover:text-gray-800 transition-colors">{truncateText(belief.content, 150)}</p>
-                <div className="mt-4 text-amber-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">Read More →</div>
+                <div className="mt-4 text-amber-600 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity">{t('readMore')}</div>
               </div>
             ))}
           </div>

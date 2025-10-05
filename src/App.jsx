@@ -44,7 +44,7 @@ export default function App() {
             <Route path="contact" element={<Contact />} />
           </Route>
         </Routes>
-        {showModal && <FormModal formType={selectedForm} closeModal={closeModal} />}
+        {showModal && <FormModal isOpen={showModal} onClose={closeModal} selectedForm={selectedForm} />}
       </>
     </LanguageProvider>
   );

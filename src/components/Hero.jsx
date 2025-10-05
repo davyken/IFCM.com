@@ -44,7 +44,7 @@ export default function Hero() {
               </div>
               <div className="text-center">
                 <p className="text-2xl sm:text-3xl font-bold text-amber-700">6</p>
-                <p className="text-sm text-gray-600">{t('ministries')}</p>
+                <p className="text-sm text-gray-600">{t('ministriesHero')}</p>
               </div>
             </div>
           </div>
