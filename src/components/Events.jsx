@@ -1,7 +1,9 @@
 import React from 'react';
 import { Calendar } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Events() {
+  const { t } = useLanguage();
   const events = [
     {
       title: 'This Mountain Must Be Removed',
@@ -33,9 +35,9 @@ export default function Events() {
     <section id="events" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('upcomingEvents')}</h2>
           <div className="w-24 h-1 bg-amber-700 mx-auto mb-4"></div>
-          <p className="text-xl text-gray-600">Join us for life-changing experiences</p>
+          <p className="text-xl text-gray-600">{t('joinUsForLifeChangingExperiences')}</p>
         </div>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">

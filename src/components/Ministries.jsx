@@ -1,40 +1,42 @@
 import React from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Ministries() {
+  const { t } = useLanguage();
   const ministries = [
     {
-      name: 'Worship Team (Levites)',
-      description: 'Ushering in the presence of God through prophetic music and Spirit-led worship',
+      name: t('worshipTeamName'),
+      description: t('worshipTeamDesc'),
       icon: '🎵',
       color: 'from-purple-400 to-purple-600'
     },
     {
-      name: 'Youth for Impact',
-      description: 'Empowering the next generation through mentorship, service, and revival',
+      name: t('youthForImpactName'),
+      description: t('youthForImpactDesc'),
       icon: '⚡',
       color: 'from-blue-400 to-blue-600'
     },
     {
-      name: 'Mothers of Nations',
-      description: 'A support and prayer network for women walking in their God-given purpose',
+      name: t('mothersOfNationsName'),
+      description: t('mothersOfNationsDesc'),
       icon: '👩',
       color: 'from-pink-400 to-pink-600'
     },
     {
-      name: 'Intercession Army',
-      description: 'Warriors standing in the gap for the church and the nations',
+      name: t('intercessionArmyName'),
+      description: t('intercessionArmyDesc'),
       icon: '🙏',
       color: 'from-amber-400 to-amber-600'
     },
     {
-      name: 'Evangelism Squad',
-      description: 'Taking the gospel to streets, hospitals, prisons, and remote communities',
+      name: t('evangelismSquadName'),
+      description: t('evangelismSquadDesc'),
       icon: '📢',
       color: 'from-green-400 to-green-600'
     },
     {
-      name: "Children's Ministry",
-      description: 'Nurturing young hearts to know and love Jesus from an early age',
+      name: t('childrenMinistryName'),
+      description: t('childrenMinistryDesc'),
       icon: '🧒',
       color: 'from-yellow-400 to-yellow-600'
     }
@@ -44,9 +46,9 @@ export default function Ministries() {
     <section id="ministries" className="py-16 sm:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Ministries</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('ourMinistries')}</h2>
           <div className="w-24 h-1 bg-amber-700 mx-auto mb-4"></div>
-          <p className="text-xl text-gray-600">Find your place to serve and grow</p>
+          <p className="text-xl text-gray-600">{t('findYourPlace')}</p>
         </div>
 
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -63,7 +65,7 @@ export default function Ministries() {
 
         <div className="text-center mt-12">
           <button className="bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all shadow-lg">
-            Join a Ministry
+            {t('joinAMinistry')}
           </button>
         </div>
       </div>

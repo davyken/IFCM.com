@@ -26,12 +26,12 @@ function Leadership() {
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-white p-8 md:p-12 rounded-2xl shadow-xl">
             <div className="flex flex-col md:flex-row items-center gap-8">
-              <img src={pastor} alt="Prophet W.T. Milton" className="w-48 h-48 rounded-full object-cover" />
+              <img src={pastor} alt={t('prophetName')} className="w-48 h-48 rounded-full object-cover" />
               <div className="flex-1 text-center md:text-left">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">Prophet W.T. Milton</h3>
+                <h3 className="text-3xl font-bold text-gray-900 mb-2">{t('prophetName')}</h3>
                 <p className="text-xl text-amber-700 mb-4">{t('seniorPastorFounder')}</p>
                 <p className="text-gray-600 leading-relaxed">
-                  Prophet W.T. Milton is a seasoned servant of God with a prophetic mantle and a deep passion for discipleship. Called into ministry through a divine encounter, he has dedicated his life to raising end-time warriors who are rooted in Christ. Under his leadership, IFCM has grown both spiritually and numerically, impacting lives across Cameroon and beyond.
+                  {t('prophetDescription')}
                 </p>
                 <Link
                   to="/about"
@@ -46,10 +46,10 @@ function Leadership() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { name: 'Pastor Anna N.', roleKey: 'associatePastor' },
-            { name: 'Evangelist Samuel T.', roleKey: 'headOfEvangelism' },
-            { name: 'Sister Martha L.', roleKey: 'womenFellowshipLeader' },
-            { name: 'Brother Joel M.', roleKey: 'youthMinistryCoordinator' }
+            { name: t('leader1Name'), roleKey: 'associatePastor' },
+            { name: t('leader2Name'), roleKey: 'headOfEvangelism' },
+            { name: t('leader3Name'), roleKey: 'womenFellowshipLeader' },
+            { name: t('leader4Name'), roleKey: 'youthMinistryCoordinator' }
           ].map((leader, idx) => (
             <div key={idx} className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow text-center">
               <div className="w-24 h-24 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
