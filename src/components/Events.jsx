@@ -6,27 +6,27 @@ export default function Events() {
   const { t } = useLanguage();
   const events = [
     {
-      title: 'This Mountain Must Be Removed',
-      date: 'August 2025',
-      description: 'A powerful crusade focused on breaking barriers and moving spiritual mountains',
+      title: t('event1Title'),
+      date: t('event1Date'),
+      description: t('event1Description'),
       color: 'border-amber-500'
     },
     {
-      title: 'My Family Must See Light',
-      date: 'November 2025',
-      description: 'Family transformation and breakthrough conference',
+      title: t('event2Title'),
+      date: t('event2Date'),
+      description: t('event2Description'),
       color: 'border-blue-500'
     },
     {
-      title: 'Healing & Deliverance Crusade (Cross Over)',
-      date: 'December 2025',
-      description: 'Year-end healing service and crossover night celebration',
+      title: t('event3Title'),
+      date: t('event3Date'),
+      description: t('event3Description'),
       color: 'border-green-500'
     },
     {
-      title: "Kingdom Women's Conference",
-      date: 'April 2026',
-      description: 'Empowering women to walk in their kingdom authority',
+      title: t('event4Title'),
+      date: t('event4Date'),
+      description: t('event4Description'),
       color: 'border-pink-500'
     }
   ];
