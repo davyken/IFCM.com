@@ -31,6 +31,7 @@ export const LanguageProvider = memo(({ children }) => {
       give: 'Give',
       contact: 'Contact',
       increasingFaith: 'Increasing Faith',
+      augmentFaithMinistries: 'Increasing Faith of Christ Ministries International',
 
       // Footer
       quickLinks: 'Quick Links',
@@ -38,7 +39,7 @@ export const LanguageProvider = memo(({ children }) => {
       connect: 'Connect',
       totalNsimeyong: 'Total Nsimeyong, Yaoundé',
       phone: '+237 672 796 404',
-      email: 'info@ifcministry.org',
+      email: 'increasingfaithofchristm@gmail.com',
       copyright: '© 2025 Increasing Faith Of Christ Ministries International. All rights reserved.',
       motto: 'Motto: Restoration, Manifestation, Teaching Spiritual Realities',
       solo: 'Solo: Increasing Faith of Christ Ministry, All: We are an Increase.',
@@ -306,15 +307,16 @@ export const LanguageProvider = memo(({ children }) => {
        give: 'Donner',
        contact: 'Contact',
        increasingFaith: 'Augmenter la Foi',
+       augmentFaithMinistries: 'Augmenter la foi des Ministères du Christ International',
 
        // Footer
        quickLinks: 'Liens Rapides',
        getInvolved: 'S\'impliquer',
        connect: 'Se Connecter',
        totalNsimeyong: 'Total Nsimeyong, Yaoundé',
-       phone: '+237 672 796 404',
-       email: 'info@ifcministry.org',
-       copyright: '© 2025 Ministère International de l\'Augmentation de la Foi du Christ. Tous droits réservés.',
+      phone: '+237 672 796 404',
+      email: 'increasingfaithofchristm@gmail.com',
+      copyright: '© 2025 Ministère International de l\'Augmentation de la Foi du Christ. Tous droits réservés.',
        motto: 'Devise: Restauration, Manifestation, Enseignement des Réalités Spirituelles',
        solo: 'Solo: Ministère de l\'Augmentation de la Foi du Christ, Tous: Nous sommes une Augmentation.',
        raisingGeneration: 'Élever une génération passionnée par le Royaume de Dieu.',

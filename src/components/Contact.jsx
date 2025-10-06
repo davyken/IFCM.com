@@ -82,7 +82,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">{t('emailLabel')}</h3>
-                <p className="text-gray-600">info@ifcministry.org</p>
+                <p className="text-gray-600">{t('email')}</p>
               </div>
             </div>
 

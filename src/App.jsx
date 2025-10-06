@@ -274,7 +274,7 @@ function Footer({ scrollToSection }) {
             <div className="space-y-2 text-sm text-gray-400">
               <p>Total Nsimeyong, Yaoundé</p>
               <p>+237 672 796 404</p>
-              <p>info@ifcministry.org</p>
+              <p>increasingfaithofchristm@gmail.com</p>
             </div>
             <div className="flex gap-3 mt-4">
               <a href="https://www.facebook.com/increasingfaithofchristministryinternational?mibextid=ZbWKwL" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
