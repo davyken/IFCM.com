@@ -17,6 +17,7 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
           { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
           { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
           { name: 'phone', type: 'tel', placeholder: t('phoneNumber') },
+          { name: 'profilePic', type: 'file', placeholder: 'Upload Profile Picture', accept: 'image/*' },
           { name: 'testimony', type: 'textarea', placeholder: t('yourTestimony'), required: true, rows: 4 },
           { name: 'date', type: 'date', placeholder: t('dateOfTestimony') }
         ];
@@ -144,36 +145,60 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
     e.preventDefault();
     const confirmed = window.confirm(`Are you sure you want to submit the ${selectedForm} form?`);
     if (confirmed) {
-      try {
-        let message = `Form Type: ${selectedForm}\n\n`;
-        for (let key in formData) {
-          if (formData[key]) {
-            message += `${key}: ${formData[key]}\n`;
-          }
-        }
-
-        const templateParams = {
-          form_type: selectedForm,
-          message: message,
-          to_email: 'increasingfaithofchristm@gmail.com'
+      if (selectedForm === t('shareYourTestimony')) {
+        // Store testimony locally
+        const existingTestimonies = JSON.parse(localStorage.getItem('userTestimonies') || '[]');
+        const newTestimony = {
+          name: formData.name,
+          testimony: formData.testimony,
+          profilePic: formData.profilePic || null,
+          initial: formData.name.split(' ').map(n => n[0]).join('').toUpperCase(),
+          date: new Date().toISOString()
         };
+        existingTestimonies.unshift(newTestimony); // Add to beginning
+        localStorage.setItem('userTestimonies', JSON.stringify(existingTestimonies));
 
-        await emailjs.send(
-          'service_7ig6m9x',
-          'template_rvi8tdn',
-          templateParams
-        );
-
-        alert(`Thank you for submitting the ${selectedForm} form! We will get back to you soon.`);
+        alert('Thank you for sharing your testimony! It has been added to the website.');
         const initialData = {};
         fields.forEach(field => {
           initialData[field.name] = '';
         });
         setFormData(initialData);
         onClose();
-      } catch (error) {
-        console.error('Email sending failed:', error);
-        alert('Sorry, there was an error sending your form. Please try again later.');
+        // Trigger page refresh to show new testimony
+        window.location.reload();
+      } else {
+        try {
+          let message = `Form Type: ${selectedForm}\n\n`;
+          for (let key in formData) {
+            if (formData[key]) {
+              message += `${key}: ${formData[key]}\n`;
+            }
+          }
+
+          const templateParams = {
+            form_type: selectedForm,
+            message: message,
+            to_email: 'increasingfaithofchristm@gmail.com'
+          };
+
+          await emailjs.send(
+            'service_7ig6m9x',
+            'template_rvi8tdn',
+            templateParams
+          );
+
+          alert(`Thank you for submitting the ${selectedForm} form! We will get back to you soon.`);
+          const initialData = {};
+          fields.forEach(field => {
+            initialData[field.name] = '';
+          });
+          setFormData(initialData);
+          onClose();
+        } catch (error) {
+          console.error('Email sending failed:', error);
+          alert('Sorry, there was an error sending your form. Please try again later.');
+        }
       }
     }
   };
@@ -215,6 +240,22 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
                       <option key={optIdx} value={option}>{option}</option>
                     ))}
                   </select>
+                ) : field.type === 'file' ? (
+                  <input
+                    type="file"
+                    accept={field.accept}
+                    onChange={(e) => {
+                      const file = e.target.files[0];
+                      if (file) {
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                          setFormData({...formData, [field.name]: reader.result});
+                        };
+                        reader.readAsDataURL(file);
+                      }
+                    }}
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-amber-700 focus:ring-2 focus:ring-amber-100 outline-none transition-all file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-amber-50 file:text-amber-700 hover:file:bg-amber-100"
+                  />
                 ) : (
                   <input
                     type={field.type}

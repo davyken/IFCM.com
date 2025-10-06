@@ -169,56 +169,7 @@ function Projects() {
   );
 }
 
-// Testimonials Component
-function Testimonials() {
-  const testimonials = [
-    {
-      name: 'Sister Jane',
-      testimony: 'I received healing in my spine during a service. God restored me completely! The doctors were amazed.',
-      initial: 'J'
-    },
-    {
-      name: 'Brother Elijah',
-      testimony: 'I gave my life to Christ at IFC. Since then, my family has never been the same. Peace and joy now reign in our home.',
-      initial: 'E'
-    },
-    {
-      name: 'Sister Grace',
-      testimony: 'Through the prayers and teachings at IFCM, I experienced breakthrough in my finances and career. God is faithful!',
-      initial: 'G'
-    }
-  ];
 
-  return (
-    <section id="testimonials" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">What God Is Doing</h2>
-          <div className="w-24 h-1 bg-amber-700 mx-auto mb-4"></div>
-          <p className="text-xl text-gray-600">From testimonies to testimonies is our testimony</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((item, idx) => (
-            <div key={idx} className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6">
-                {item.initial}
-              </div>
-              <p className="text-gray-700 leading-relaxed mb-4 italic">"{item.testimony}"</p>
-              <p className="font-bold text-gray-900">— {item.name}</p>
-            </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <button className="bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all shadow-lg">
-            Share Your Testimony
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // Footer Component
 function Footer({ scrollToSection }) {
