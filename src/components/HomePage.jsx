@@ -15,6 +15,7 @@ import pastor from '../assets/pastor.jpg';
 function Testimonials({ openFormModal }) {
   const { t } = useLanguage();
   const [userTestimonies, setUserTestimonies] = useState([]);
+  const [showAll, setShowAll] = useState(false);
 
   const defaultTestimonials = [
     {
@@ -46,6 +47,7 @@ function Testimonials({ openFormModal }) {
   }, []);
 
   const allTestimonials = [...userTestimonies, ...defaultTestimonials];
+  const displayedTestimonials = showAll ? allTestimonials : allTestimonials.slice(0, 3);
 
   return (
     <section id="testimonials" className="py-20 bg-white">
@@ -56,46 +58,37 @@ function Testimonials({ openFormModal }) {
           <p className="text-xl text-gray-600">From testimonies to testimonies is our testimony</p>
         </div>
 
-        <div className="relative overflow-hidden">
-          <button
-            onClick={() => {
-              setCurrentIndex((prev) => (prev === 0 ? allTestimonials.length - 1 : prev - 1));
-            }}
-            aria-label="Previous testimonials"
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-amber-700 text-white p-2 rounded-full hover:bg-amber-800 transition-colors"
-          >
-            &#8592;
-          </button>
-          <div className="flex animate-marquee space-x-8">
-            {allTestimonials.concat(allTestimonials).map((item, idx) => (
-              <div key={idx} className="flex-shrink-0 w-80 bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg">
-                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 overflow-hidden">
-                  {item.profilePic ? (
-                    <img src={item.profilePic} alt={item.name} className="w-full h-full object-cover" />
-                  ) : (
-                    item.initial
-                  )}
-                </div>
-                <p className="text-gray-700 leading-relaxed mb-4 italic">"{item.testimony}"</p>
-                <p className="font-bold text-gray-900">— {item.name}</p>
-                {item.date && (
-                  <p className="text-sm text-gray-500 mt-2">
-                    {new Date(item.date).toLocaleDateString()}
-                  </p>
+        <div className="flex flex-col md:grid md:grid-cols-3 gap-8">
+          {displayedTestimonials.map((item, idx) => (
+            <div key={idx} className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 overflow-hidden mx-auto">
+                {item.profilePic ? (
+                  <img src={item.profilePic} alt={item.name} className="w-full h-full object-cover" />
+                ) : (
+                  item.initial
                 )}
               </div>
-            ))}
-          </div>
-          <button
-            onClick={() => {
-              setCurrentIndex((prev) => (prev === allTestimonials.length - 1 ? 0 : prev + 1));
-            }}
-            aria-label="Next testimonials"
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-amber-700 text-white p-2 rounded-full hover:bg-amber-800 transition-colors"
-          >
-            &#8594;
-          </button>
+              <p className="text-gray-700 leading-relaxed mb-4 italic">"{item.testimony}"</p>
+              <p className="font-bold text-gray-900">— {item.name}</p>
+              {item.date && (
+                <p className="text-sm text-gray-500 mt-2">
+                  {new Date(item.date).toLocaleDateString()}
+                </p>
+              )}
+            </div>
+          ))}
         </div>
+
+        {allTestimonials.length > 3 && (
+          <div className="text-center mt-8">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="bg-amber-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-amber-800 transition-colors"
+            >
+              {showAll ? 'Show Less' : 'Show More'}
+            </button>
+          </div>
+        )}
 
         <div className="text-center mt-12">
           <button onClick={() => openFormModal(t('shareYourTestimony'))} className="bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all shadow-lg">
