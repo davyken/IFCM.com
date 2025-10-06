@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from './Hero';
 import About from './About';
@@ -10,6 +10,102 @@ import Give from './Give';
 import Contact from './Contact';
 import { useLanguage } from '../contexts/LanguageContext';
 import pastor from '../assets/pastor.jpg';
+
+// Testimonials Component
+function Testimonials({ openFormModal }) {
+  const { t } = useLanguage();
+  const [userTestimonies, setUserTestimonies] = useState([]);
+
+  const defaultTestimonials = [
+    {
+      name: 'Sister Jane',
+      testimony: 'I received healing in my spine during a service. God restored me completely! The doctors were amazed.',
+      initial: 'J',
+      profilePic: null,
+      date: null
+    },
+    {
+      name: 'Brother Elijah',
+      testimony: 'I gave my life to Christ at IFC. Since then, my family has never been the same. Peace and joy now reign in our home.',
+      initial: 'E',
+      profilePic: null,
+      date: null
+    },
+    {
+      name: 'Sister Grace',
+      testimony: 'Through the prayers and teachings at IFCM, I experienced breakthrough in my finances and career. God is faithful!',
+      initial: 'G',
+      profilePic: null,
+      date: null
+    }
+  ];
+
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem('userTestimonies') || '[]');
+    setUserTestimonies(stored);
+  }, []);
+
+  const allTestimonials = [...userTestimonies, ...defaultTestimonials];
+
+  return (
+    <section id="testimonials" className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">What God Is Doing</h2>
+          <div className="w-24 h-1 bg-amber-700 mx-auto mb-4"></div>
+          <p className="text-xl text-gray-600">From testimonies to testimonies is our testimony</p>
+        </div>
+
+        <div className="relative overflow-hidden">
+          <button
+            onClick={() => {
+              setCurrentIndex((prev) => (prev === 0 ? allTestimonials.length - 1 : prev - 1));
+            }}
+            aria-label="Previous testimonials"
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-amber-700 text-white p-2 rounded-full hover:bg-amber-800 transition-colors"
+          >
+            &#8592;
+          </button>
+          <div className="flex animate-marquee space-x-8">
+            {allTestimonials.concat(allTestimonials).map((item, idx) => (
+              <div key={idx} className="flex-shrink-0 w-80 bg-gradient-to-br from-amber-50 to-white p-8 rounded-2xl shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mb-6 overflow-hidden">
+                  {item.profilePic ? (
+                    <img src={item.profilePic} alt={item.name} className="w-full h-full object-cover" />
+                  ) : (
+                    item.initial
+                  )}
+                </div>
+                <p className="text-gray-700 leading-relaxed mb-4 italic">"{item.testimony}"</p>
+                <p className="font-bold text-gray-900">— {item.name}</p>
+                {item.date && (
+                  <p className="text-sm text-gray-500 mt-2">
+                    {new Date(item.date).toLocaleDateString()}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+          <button
+            onClick={() => {
+              setCurrentIndex((prev) => (prev === allTestimonials.length - 1 ? 0 : prev + 1));
+            }}
+            aria-label="Next testimonials"
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-amber-700 text-white p-2 rounded-full hover:bg-amber-800 transition-colors"
+          >
+            &#8594;
+          </button>
+        </div>
+
+        <div className="text-center mt-12">
+          <button onClick={() => openFormModal(t('shareYourTestimony'))} className="bg-amber-700 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-800 transition-all shadow-lg">
+            Share Your Testimony
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 // Leadership Component
 function Leadership() {
@@ -73,8 +169,8 @@ export default function HomePage({ openFormModal }) {
       <Services />
       <Ministries />
       <Events />
-            <Leadership />
-
+      <Leadership />
+      <Testimonials openFormModal={openFormModal} />
       <Forms openFormModal={openFormModal} />
       <Give />
       <Contact />
