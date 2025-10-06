@@ -19,11 +19,15 @@ export default function Contact() {
     e.preventDefault();
 
     try {
+      let message = `Contact Form Submission\n\n`;
+      for (let key in formData) {
+        if (formData[key]) {
+          message += `${key}: ${formData[key]}\n`;
+        }
+      }
+
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
+        message: message,
         to_email: 'increasingfaithofchristm@gmail.com'
       };
 

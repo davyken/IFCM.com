@@ -9,6 +9,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative pt-8 sm:pt-12 min-h-screen flex items-center" style={{ backgroundImage: `url(${worships})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+      <div className="absolute inset-0 bg-black opacity-30"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-white to-blue-50 opacity-90"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
