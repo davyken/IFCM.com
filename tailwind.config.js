@@ -9,6 +9,7 @@ export default {
         'fade-in': 'fade-in 0.3s ease-out',
         'scale-in': 'scale-in 0.3s ease-out',
         'marquee': 'marquee 30s linear infinite',
+        'marquee-reverse': 'marquee-reverse 30s linear infinite',
       },
       keyframes: {
         'fade-in': {
@@ -22,6 +23,10 @@ export default {
         'marquee': {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-50%)' },
+        },
+        'marquee-reverse': {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(0%)' },
         },
       },
     },
