@@ -8,7 +8,7 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
   const [formData, setFormData] = useState({});
 
   // Initialize EmailJS
-  emailjs.init('RaNLKs63cJiPkuGDT');
+  emailjs.init('Fy14o2md1Rr_eoO3L');
 
   const getFormFields = (formType) => {
     switch (formType) {
@@ -179,12 +179,13 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
           const templateParams = {
             form_type: selectedForm,
             message: message,
-            to_email: 'increasingfaithofchristm@gmail.com'
+            to_email: 'increasingfaithofchristm@gmail.com',
+            from_email: formData.email
           };
 
           await emailjs.send(
-            'service_7ig6m9x',
-            'template_rvi8tdn',
+            'service_vukcx8r',
+            'template_tked037',
             templateParams
           );
 

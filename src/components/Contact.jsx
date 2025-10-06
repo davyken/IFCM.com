@@ -13,7 +13,7 @@ export default function Contact() {
   });
 
   // Initialize EmailJS
-  emailjs.init('RaNLKs63cJiPkuGDT');
+  emailjs.init('Fy14o2mdRr_eoO3L');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
