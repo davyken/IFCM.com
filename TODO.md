@@ -1,0 +1,4 @@
+- [x] Fix EmailJS public key in Contact.jsx to match FormModal.jsx
+- [x] Improve error handling in both forms to show more specific error messages
+- [x] Test form submissions after fixes (run dev server and submit forms)
+- [ ] Verify EmailJS service and template IDs in dashboard if issues persist

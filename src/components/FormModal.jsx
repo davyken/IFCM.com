@@ -198,7 +198,7 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
           onClose();
         } catch (error) {
           console.error('Email sending failed:', error);
-          alert('Sorry, there was an error sending your form. Please try again later.');
+          alert(`Sorry, there was an error sending your form: ${error.message || 'Unknown error'}. Please try again later.`);
         }
       }
     }
