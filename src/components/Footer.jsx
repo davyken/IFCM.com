@@ -15,7 +15,7 @@ export default function Footer() {
               <img src={logo} alt="IFCM Logo" className="h-10 w-10 sm:h-12 sm:w-12 mr-2" />
               <div>
                 <h3 className="font-bold text-base sm:text-lg">IFCM</h3>
-                <p className="text-xs text-gray-400">{t('increasingFaith')}</p>
+                <p className="text-xs text-gray-400">{t('augmentFaithMinistries')}</p>
               </div>
             </div>
             <p className="text-gray-400 text-sm">

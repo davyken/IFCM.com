@@ -145,9 +145,16 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
     const confirmed = window.confirm(`Are you sure you want to submit the ${selectedForm} form?`);
     if (confirmed) {
       try {
+        let message = `Form Type: ${selectedForm}\n\n`;
+        for (let key in formData) {
+          if (formData[key]) {
+            message += `${key}: ${formData[key]}\n`;
+          }
+        }
+
         const templateParams = {
           form_type: selectedForm,
-          form_data: JSON.stringify(formData, null, 2),
+          message: message,
           to_email: 'increasingfaithofchristm@gmail.com'
         };
 

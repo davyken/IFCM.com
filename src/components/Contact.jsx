@@ -19,11 +19,15 @@ export default function Contact() {
     e.preventDefault();
 
     try {
+      let message = `Contact Form Submission\n\n`;
+      for (let key in formData) {
+        if (formData[key]) {
+          message += `${key}: ${formData[key]}\n`;
+        }
+      }
+
       const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone,
-        message: formData.message,
+        message: message,
         to_email: 'increasingfaithofchristm@gmail.com'
       };
 
@@ -78,7 +82,7 @@ export default function Contact() {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">{t('emailLabel')}</h3>
-                <p className="text-gray-600">info@ifcministry.org</p>
+                <p className="text-gray-600">{t('email')}</p>
               </div>
             </div>
 

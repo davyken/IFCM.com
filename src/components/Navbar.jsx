@@ -35,10 +35,10 @@ export default function Navbar({ isMenuOpen, toggleMenu }) {
         <div className="flex justify-between items-center h-20">
           <Link to="/" className="flex items-center cursor-pointer">
             <img src={logo} alt="IFCM Logo" className="h-12 w-12 sm:h-16 sm:w-16 mr-2 sm:mr-3" />
-            <div>
-              <h1 className="text-lg sm:text-xl font-bold text-amber-700">IFCM</h1>
-              <p className="text-xs text-gray-600 hidden sm:block">{t('increasingFaith')}</p>
-            </div>
+              <div>
+                <h1 className="text-lg sm:text-xl font-bold text-amber-700">IFCM</h1>
+                <p className="text-xs text-gray-600 hidden sm:block">{t('augmentFaithMinistries')}</p>
+              </div>
           </Link>
 
           <div className="hidden md:flex space-x-8 items-center">

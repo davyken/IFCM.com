@@ -17,6 +17,8 @@ export const LanguageProvider = memo(({ children }) => {
     setLanguage(prev => prev === 'en' ? 'fr' : 'en');
   };
 
+  const t = (key) => translations[language]?.[key] || key;
+
   const translations = {
     en: {
       // Navbar
@@ -29,6 +31,7 @@ export const LanguageProvider = memo(({ children }) => {
       give: 'Give',
       contact: 'Contact',
       increasingFaith: 'Increasing Faith',
+      augmentFaithMinistries: 'Increasing Faith of Christ Ministries International',
 
       // Footer
       quickLinks: 'Quick Links',
@@ -36,7 +39,7 @@ export const LanguageProvider = memo(({ children }) => {
       connect: 'Connect',
       totalNsimeyong: 'Total Nsimeyong, Yaoundé',
       phone: '+237 672 796 404',
-      email: 'info@ifcministry.org',
+      email: 'increasingfaithofchristm@gmail.com',
       copyright: '© 2025 Increasing Faith Of Christ Ministries International. All rights reserved.',
       motto: 'Motto: Restoration, Manifestation, Teaching Spiritual Realities',
       solo: 'Solo: Increasing Faith of Christ Ministry, All: We are an Increase.',
@@ -273,7 +276,7 @@ export const LanguageProvider = memo(({ children }) => {
       belief15Title: 'Holy Communion (The Lord\'s Supper).',
       belief15Content: 'Jesus and his disciples broke bread and ate, He poured wine and they drank, Jesus said, the bread is His body and the wine is His blood (1Cor 11:20, 10:16). It is a blessing from the Lord that we do in commemoration of Jesus (Matt 26:26-29, Mark 14:22-25, Luke 22:19-20). It is the only thing Christ said we should do in remembrance of Him.',
       belief16Title: 'Holy Matrimony',
-      belief16Content: 'Every man must be a husband to a wife (Gen 2:24-25, Titus 1:6). Divorce is not permitted except on the condition of adultery. (Matt 5:31-32). If you leave your spouse stay unmarried (Matt 19:9-12, 1Cor 7:10-11). No believer is allowed to marry and unbeliever (2Cor 7:16-17).',
+      belief16Content: 'Every man must be a husband to a wife (Gen 2:24-25, Titus 1:6). Divorce is not permitted except on the condition of adultery. (Matt 5:31-32). If you leave your spouse stay unmarried (Matt 19:9-12, 1Cor 7:10-11). No believer is allowed to marry an unbeliever (2Cor 6:14-18).',
       belief17Title: 'Integrity',
       belief17Content: 'Integrity is our stand and watch word (Prov 20:7). It brings about a better world. If all families have integrity, their children will take after them and that will bring about a better community, neighborhood, home, town, state, and world.',
 
@@ -304,15 +307,16 @@ export const LanguageProvider = memo(({ children }) => {
        give: 'Donner',
        contact: 'Contact',
        increasingFaith: 'Augmenter la Foi',
+       augmentFaithMinistries: 'Augmenter la foi des Ministères du Christ International',
 
        // Footer
        quickLinks: 'Liens Rapides',
        getInvolved: 'S\'impliquer',
        connect: 'Se Connecter',
        totalNsimeyong: 'Total Nsimeyong, Yaoundé',
-       phone: '+237 672 796 404',
-       email: 'info@ifcministry.org',
-       copyright: '© 2025 Ministère International de l\'Augmentation de la Foi du Christ. Tous droits réservés.',
+      phone: '+237 672 796 404',
+      email: 'increasingfaithofchristm@gmail.com',
+      copyright: '© 2025 Ministère International de l\'Augmentation de la Foi du Christ. Tous droits réservés.',
        motto: 'Devise: Restauration, Manifestation, Enseignement des Réalités Spirituelles',
        solo: 'Solo: Ministère de l\'Augmentation de la Foi du Christ, Tous: Nous sommes une Augmentation.',
        raisingGeneration: 'Élever une génération passionnée par le Royaume de Dieu.',
@@ -370,45 +374,6 @@ export const LanguageProvider = memo(({ children }) => {
       experiencePowerOfGod: 'Expérimentez la Puissance de Dieu',
       ifcDescription: 'L\'Augmentation de la Foi du Christ ministères International est une église chrétienne pentecôtiste dynamique fondée par l\'homme de Dieu – Prophète WT Milton. C\'est une grande famille de puissance, de gloire et des bénédictions insondables de Dieu. Dieu continue d\'augmenter cette famille, tout en montrant ses œuvres puissantes à travers notre fondateur – Prophète WT Milton. Nous sommes situés à Yaoundé Cameroun, où la Présence et la puissance de Dieu sauvent, guérissent et restaurent les destins et les dignités humaines!',
       ifcFoundation: 'Sur l\'instruction divine de Dieu, le Prophète WT Milton a reçu la directive de commencer ce ministère et aussi le nom à lui donner. Il a nommé le ministère "Augmentation de la Foi du Christ" en totale obéissance à la Parole de Dieu. L\'Augmentation de la Foi du Christ ministères a été fondée le 28 avril avec 29 membres et a depuis grandi à des hauteurs plus élevées.',
-      // Beliefs
-      belief1Title: 'Aimez-vous les uns les autres:',
-      belief1Content: '(Matthieu 5:43-44) Jésus a dit que la seule façon dont le monde saurait que vous êtes mes disciples est quand vous obéissez à mon commandement qui est, aimez-vous les uns les autres (Jean 13:34-35). La forme la plus élevée de Spiritualité se manifeste à travers l\'AMOUR. (1Jean 2:9, 12, Rom 13:8, 1Jean 4:7-8, 16, 20-21)',
-      belief2Title: 'La Sainte Bible:',
-      belief2Content: 'À l\'Augmentation de la Foi du Christ Ministère, nous croyons que la parole de Dieu est notre vérité évangélique et tout ce dont nous avons besoin pour notre monde mourant parce que c\'est la puissance de Dieu pour le salut. (Romains 1:16, Matthieu 4; 4, Actes 6:4, Matt 8:8)',
-      belief3Title: 'L\'Usage du Nom de Jésus',
-      belief3Content: 'À I.F.C.M, nous faisons toutes les demandes et pétitions au nom de Jésus (Phil 2:9-11, Jean 14; 13-14, 1Jean 3:22-23).',
-      belief4Title: 'La Divinité (Trinité):',
-      belief4Content: 'Cela parle de l\'union de Dieu le Père, le Fils et le Saint-Esprit. (Col 2:9). Ils rendent témoignage au ciel (unis) (1Jean 5:7, Matt 28:19, Genèse 1:26-27, Jean 1:14, Actes 3: 4)',
-      belief5Title: 'Baptême d\'eau:',
-      belief5Content: 'Le mot baptême vient d\'un mot grec \'baptizo\' qui signifie: Immerger, Submerger ou enterrer. L\'immersion c\'est-à-dire (plonger les croyants dans l\'eau) montre leur mort, enterrement et résurrection avec Christ Jésus. En d\'autres termes, le baptême est un sacrement commandé à nous par Christ Jésus qui signifie notre mort et résurrection avec Lui à travers notre foi dans la puissance active de Dieu qui a ressuscité Christ de la mort. (Col 2;13, Matt 29:19, Marc 16:13-16, Marc 1:9).',
-      belief6Title: 'Baptême du Saint-Esprit:',
-      belief6Content: 'Le baptême du Saint-Esprit est l\'investissement par le Saint-Esprit pour un signe et pour nous porter témoignage (Actes 1:4-5, 8, marc 1:8). La capacité de parler en langues suit (Actes 2:4, 1 Cor 14:2, 4, 14)',
-      belief7Title: 'Puissance et Autorité:',
-      belief7Content: 'Nous croyons que toute Autorité est en Jésus et Il nous a donné cette autorité pour fournir des solutions aux problèmes des gens en Son nom.',
-      belief8Title: 'L\'importance de la Croix:',
-      belief8Content: 'Comment Jésus est mort et ressuscité, et son sang a payé le prix pour notre salut. Nous savons que par ses plaies nous avons été guéris',
-      belief9Title: 'Repentance:',
-      belief9Content: 'La repentance signifie se détourner de ses mauvaises voies, conversion de ceux qui sont dans le monde et aussi ceux qui étaient autrefois dans la foi et ont fait marche arrière (Matt 4:16-17, Actes 2:38) Actes 3:19 dit \'Repentez-vous et soyez convertis\'. Être né de nouveau est obéir (Rom 10:9-10), être né de Dieu (Jean 1:13, 1Pierre 1:23).',
-      belief10Title: 'Jeûne et Prières:',
-      belief10Content: 'Les chrétiens sont liés à jeûner et prier, qui est l\'un des moyens sûrs par lesquels nous nous approchons de Dieu (Matt 9:15). Nous recevons de Dieu à travers les prières (Marc 11:24, Luc 2:37, Jacques 5:16, Matt 4:2, Matt 17: 21).',
-      belief11Title: 'Miracles et Guérisons, (Dons de Dieu, Imposition des Mains):',
-      belief11Content: 'Dieu agit de diverses manières, les miracles que nous voyons sont par la puissance de Dieu. Imaginer un boiteux marchant, l\'aveugle voyant etc c\'est donné par Dieu (1 Cor 12:10, Actes 15:12, Gal 5:3). La guérison est de Dieu pas de l\'homme (1Corin 12:9) Jésus lui-même a donné la proclamation en Marc 16:18 \'Ils prendront des serpents et s\'ils boivent une eau mortelle, elle ne leur nuira pas, ils imposeront les mains sur les malades et ils recouvreront\'. Jacques 5:14-16, Marc 6:13, 1 Timothée 5:22, parle aussi d\'onction avec l\'huile d\'olive pour la guérison.',
-      belief12Title: 'Discipleship:',
-      belief12Content: 'L\'acte de faire continuer le christianisme est de suivre. Il doit y avoir un maître (Luc 14:26-27) Jésus est le maître invisible mais il met un maître en place que nous pouvons voir (surveillant du ministère), (Mat 9:14). L\'apôtre Paul était un maître en 1Corin 4:15 et 1 Cor 11:1 il a dit \'suivez-moi comme je suis Christ\'.',
-      belief13Title: 'Soumission à l\'Autorité de l\'Église.',
-      belief13Content: 'La loyauté de chaque membre devrait être primordiale. Il ne devrait jamais y avoir de place pour les groupes qui résistent à l\'autorité (fractions pour résister à l\'autorité), (Héb 13:17, Mat 10:24), (voir Vérité Essentielle pour les Débutants en Foi Chrétienne et lire sur Loyauté par W.T Milton).',
-      belief14Title: 'Pardon et Réconciliation',
-      belief14Content: 'La constitution de la justification est le pardon, qui est pardonner ou être pardonné. Dieu nous a absorbés de nos péchés, qui est l\'une des conditions pour devenir partie du royaume de Dieu. Le Seigneur\'s Prayer l\'explique en Matt 6:12, 15, vous devez pardonner aux autres pour que Dieu vous pardonne et si vous ne pardonnez pas, Dieu ne pardonnera pas. Voir ce que Christ a dit en Matt 18:21-22.',
-      belief15Title: 'Sainte Communion (La Cène du Seigneur).',
-      belief15Content: 'Jésus et ses disciples ont rompu le pain et mangé, Il a versé du vin et ils ont bu, Jésus a dit que le pain est Son corps et le vin est Son sang (1Cor 11:20, 10:16). C\'est une bénédiction du Seigneur que nous faisons en commémoration de Jésus (Matt 26:26-29, Marc 14:22-25, Luc 22:19-20). C\'est la seule chose que Christ a dit que nous devrions faire en souvenir de Lui.',
-      belief16Title: 'Saint Mariage',
-      belief16Content: 'Chaque homme doit être un mari à une épouse (Gen 2:24-25, Tite 1:6). Le divorce n\'est pas permis sauf à la condition d\'adultère. (Matt 5:31-32). Si vous quittez votre conjoint restez célibataire (Matt 19:9-12, 1Cor 7:10-11). Aucun croyant n\'est autorisé à épouser un incroyant (2Cor 7:16-17).',
-      belief17Title: 'Intégrité',
-      belief17Content: 'L\'intégrité est notre position et mot d\'ordre (Prov 20:7). Elle apporte un meilleur monde. Si toutes les familles ont l\'intégrité, leurs enfants prendront après eux et cela apportera une meilleure communauté, quartier, maison, ville, état, et monde.',
-      readMoreBeliefs: 'Lire Plus →',
-
-      // Hero
-      ministries: 'Ministères',
 
       // Services
       serviceTimes: 'Heures de Service',
@@ -589,32 +554,15 @@ export const LanguageProvider = memo(({ children }) => {
       belief16Content: 'Chaque homme doit être un mari à une épouse (Gen 2:24-25, Tite 1:6). Le divorce n\'est pas permis sauf à la condition d\'adultère. (Matt 5:31-32). Si vous quittez votre conjoint restez célibataire (Matt 19:9-12, 1Cor 7:10-11). Aucun croyant n\'est autorisé à épouser un incroyant (2Cor 7:16-17).',
       belief17Title: 'Intégrité',
       belief17Content: 'L\'intégrité est notre position et mot d\'ordre (Prov 20:7). Elle apporte un meilleur monde. Si toutes les familles ont l\'intégrité, leurs enfants prendront après eux et cela apportera une meilleure communauté, quartier, maison, ville, état, et monde.',
-
-      // Events
-      event1Title: 'Cette Montagne Doit Être Enlevée',
-      event1Date: 'Août 2025',
-      event1Description: 'Une croisade puissante axée sur la rupture des barrières et le déplacement des montagnes spirituelles',
-      event2Title: 'Ma Famille Doit Voir la Lumière',
-      event2Date: 'Novembre 2025',
-      event2Description: 'Conférence de transformation et de percée familiale',
-      event3Title: 'Croisade de Guérison et de Délivrance (Traversée)',
-      event3Date: 'Décembre 2025',
-      event3Description: 'Service de guérison de fin d\'année et célébration de la nuit de passage',
-      event4Title: 'Conférence des Femmes du Royaume',
-      event4Date: 'Avril 2026',
-      event4Description: 'Autonomiser les femmes à marcher dans leur autorité royale',
-
-      // Add more as needed
+      readMoreBeliefs: 'Lire Plus →',
     }
   };
 
-  const t = (key) => {
-    return translations[language][key] || key;
-  };
-
   return (
-    <LanguageContext.Provider value={{ language, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language, toggleLanguage, t, translations }}>
       {children}
     </LanguageContext.Provider>
   );
 });
+
+export default LanguageProvider;
