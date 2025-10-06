@@ -13,7 +13,7 @@ export default function Contact() {
   });
 
   // Initialize EmailJS
-  emailjs.init('Fy14o2mdRr_eoO3L');
+  emailjs.init('Fy14o2md1Rr_eoO3L');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,8 +32,8 @@ export default function Contact() {
       };
 
       await emailjs.send(
-        'service_7ig6m9x',
-        'template_rvi8tdn',
+        'service_vukcx8r',
+        'template_tked037',
         templateParams
       );
 
@@ -41,7 +41,7 @@ export default function Contact() {
       setFormData({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
       console.error('Email sending failed:', error);
-      alert('Sorry, there was an error sending your message. Please try again later.');
+      alert(`Sorry, there was an error sending your message: ${error.message || 'Unknown error'}. Please try again later.`);
     }
   };
 
