@@ -54,7 +54,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/increasingfaithofchristministryinternational?mibextid=ZbWKwL" className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
                 <Facebook size={14} />
               </a>
-              <a href="https://www.youtube.com/@increasingfaithofchristmin150" className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
+              <a href="https://www.youtube.com/@increasingfaithofchristmin1504" className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
                 <Youtube size={14} />
               </a>
               <a href="https://instagram.com/ifcministry" className="w-6 h-6 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
