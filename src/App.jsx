@@ -231,7 +231,7 @@ function Footer({ scrollToSection }) {
               <a href="https://www.facebook.com/increasingfaithofchristministryinternational?mibextid=ZbWKwL" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
                 <Facebook size={16} />
               </a>
-              <a href="https://www.youtube.com/@increasingfaithofchristmin150" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
+              <a href="https://www.youtube.com/@increasingfaithofchristmin1504" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
                 <Youtube size={16} />
               </a>
               <a href="https://instagram.com/ifcministry" className="w-8 h-8 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-700 transition-colors">
