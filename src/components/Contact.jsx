@@ -92,7 +92,7 @@ export default function Contact() {
                 <a href="https://www.facebook.com/increasingfaithofchristministryinternational?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors">
                   <Facebook size={20} />
                 </a>
-                <a href="https://www.youtube.com/@increasingfaithofchristmin150" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors">
+                <a href="https://www.youtube.com/@increasingfaithofchristmin1504" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors">
                   <Youtube size={20} />
                 </a>
                 <a href="https://instagram.com/ifcministry" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 bg-pink-600 rounded-full flex items-center justify-center text-white hover:bg-pink-700 transition-colors">
