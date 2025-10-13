@@ -14,112 +14,143 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
     switch (formType) {
       case t('shareYourTestimony'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber') },
-          { name: 'profilePic', type: 'file', placeholder: 'Upload Profile Picture', accept: 'image/*' },
-          { name: 'testimony', type: 'textarea', placeholder: t('yourTestimony'), required: true, rows: 4 },
-          { name: 'date', type: 'date', placeholder: t('dateOfTestimony') }
+          { name: 'status', type: 'select', placeholder: 'Status *', required: true, options: ['Mr'] },
+          { name: 'firstName', type: 'text', placeholder: 'First *', required: true },
+          { name: 'lastName', type: 'text', placeholder: 'Last *', required: true },
+          { name: 'fullName', type: 'text', placeholder: 'Full Name *', required: true },
+          { name: 'email', type: 'email', placeholder: 'Email *', required: true },
+          { name: 'phone', type: 'tel', placeholder: 'Phone *', required: true },
+          { name: 'gender', type: 'select', placeholder: 'Gender *', required: true, options: ['Male', 'Female'] },
+          { name: 'shareMethod', type: 'select', placeholder: 'How would you like to share your Testimony ? *', required: true, options: ['Physically', 'Not physical', 'optional incase of video testimony uploads'] },
+          { name: 'service', type: 'select', placeholder: 'What Service Do You Want It Shared?', required: false, options: ['First Service'] },
+          { name: 'testimonyTitle', type: 'text', placeholder: 'Testimony Title *', required: true },
+          { name: 'details', type: 'textarea', placeholder: 'Details of your testimony *', required: true, rows: 4 }
         ];
       case t('newConvertForm'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber') },
-          { name: 'conversionDate', type: 'date', placeholder: t('dateOfConversion'), required: true },
-          { name: 'howHeard', type: 'text', placeholder: t('howDidYouHear') },
-          { name: 'prayerRequest', type: 'textarea', placeholder: t('prayerRequests'), rows: 3 }
+          { name: 'firstName', type: 'text', placeholder: 'First *', required: true },
+          { name: 'lastName', type: 'text', placeholder: 'Last *', required: true },
+          { name: 'email', type: 'email', placeholder: 'Email', required: false },
+          { name: 'phone', type: 'tel', placeholder: 'Phone Number *', required: true },
+          { name: 'gender', type: 'select', placeholder: 'Gender *', required: true, options: ['Male', 'Female'] },
+          { name: 'maritalStatus', type: 'select', placeholder: 'Marital Status *', required: true, options: ['Married', 'Single'] },
+          { name: 'ageGroup', type: 'select', placeholder: 'Age Group *', required: true, options: ['Adult', 'Teen', 'Child'] },
+          { name: 'occupation', type: 'text', placeholder: 'Occupation *', required: true },
+          { name: 'address', type: 'text', placeholder: 'Address *', required: true },
+          { name: 'howHeard', type: 'text', placeholder: 'How did you know about Increasing Faith of Christ Ministry (IFCM)*', required: true },
+          { name: 'membershipInterest', type: 'select', placeholder: 'Would you like to be a member of IFCM ? *', required: true, options: ['Yes', 'NO'] },
+          { name: 'contactPreference', type: 'select', placeholder: 'Would like us to contact, phone or visit you? *', required: true, options: ['Yes', 'NO'] },
+          { name: 'prayerRequests', type: 'textarea', placeholder: 'Prayer Requests', rows: 3 }
         ];
       case t('membershipForm'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber'), required: true },
-          { name: 'address', type: 'text', placeholder: t('address'), required: true },
-          { name: 'dateOfBirth', type: 'date', placeholder: t('dateOfBirth'), required: true },
-          { name: 'maritalStatus', type: 'select', placeholder: t('maritalStatus'), options: ['Single', 'Married', 'Divorced', 'Widowed'] },
-          { name: 'occupation', type: 'text', placeholder: t('occupation') },
-          { name: 'emergencyContact', type: 'text', placeholder: t('emergencyContactName') },
-          { name: 'emergencyPhone', type: 'tel', placeholder: t('emergencyContactPhone') }
+          { name: 'email', type: 'email', placeholder: 'Email *', required: true },
+          { name: 'firstName', type: 'text', placeholder: 'First Name*', required: true },
+          { name: 'lastName', type: 'text', placeholder: 'Last Name.*', required: true },
+          { name: 'phone', type: 'tel', placeholder: 'Phone Number*', required: true },
+          { name: 'gender', type: 'select', placeholder: 'Gender*', required: true, options: ['Male', 'Female'] },
+          { name: 'residentialAddress', type: 'text', placeholder: 'Residential address*', required: true },
+          { name: 'ageRange', type: 'select', placeholder: 'Age Range', required: false, options: ['13-16', '17-19', '20-24', '25-29', '30-34', '35-39', '40-44', '45-49', '50-54', '55-59', '60 and above'] },
+          { name: 'dateOfBirth', type: 'date', placeholder: 'Date of Birth*', required: true },
+          { name: 'maritalStatus', type: 'select', placeholder: 'Marital status*', required: true, options: ['Single', 'Married'] },
+          { name: 'weddingAnniversary', type: 'date', placeholder: 'If married, please kindly share your wedding anniversary date with us', required: false },
+          { name: 'occupation', type: 'text', placeholder: 'Occupation*', required: true },
+          { name: 'corpMember', type: 'select', placeholder: 'Are you currently serving as a Corp Member?', required: false, options: ['Yes', 'No'] },
+          { name: 'courseOfStudy', type: 'text', placeholder: 'If you are a student, what is your course of study?', required: false },
+          { name: 'levelOfStudy', type: 'text', placeholder: 'What is your current level of study? (scroll with educational levels)', required: false },
+          { name: 'membershipDuration', type: 'text', placeholder: 'Since when have you been a member of IFCM?*', required: true },
+          { name: 'missionalCommunity', type: 'select', placeholder: 'Do you belong to a Missional Community in church?*', required: true, options: ['Yes', 'No'] },
+          { name: 'missionalCommunityName', type: 'text', placeholder: 'If yes, please state the Missional Community you belong to in church? *', required: false },
+          { name: 'addToCommunity', type: 'select', placeholder: 'If not, would you love to be added?', required: false, options: ['Yes', 'No'] },
+          { name: 'workforceDepartment', type: 'text', placeholder: 'If you are a member of the Workforce, what department do you belong to?', required: false },
+          { name: 'completedPrograms', type: 'select', placeholder: 'What IFCM Educational program (s) have you completed? (Simply click on the last IFCM you graduated from)*', required: true, options: ['Foundation school', 'Ministry classes', 'Baptismal classes', "I've not done any IFCM Educational programs yet"] },
+          { name: 'otherPrograms', type: 'text', placeholder: 'Other:', required: false },
+          { name: 'profilePicture', type: 'file', placeholder: 'Please upload a nice picture of you here.*', required: true, accept: 'image/*' },
+          { name: 'bornAgain', type: 'checkbox', placeholder: 'Are you born again? *', required: true }
+        ];
+      case 'trueMemberRecognition':
+        return [
+          { name: 'fullName', type: 'text', placeholder: 'Full Name *', required: true },
+          { name: 'address', type: 'text', placeholder: 'Address *', required: true },
+          { name: 'phone', type: 'tel', placeholder: 'Phone Number *', required: true },
+          { name: 'email', type: 'email', placeholder: 'Email *', required: true },
+          { name: 'status', type: 'select', placeholder: 'Status (Marital) *', required: true, options: ['Single', 'Married', 'Divorced', 'Widowed'] },
+          { name: 'age', type: 'number', placeholder: 'Age *', required: true, min: 13 },
+          { name: 'bornAgain', type: 'checkbox', placeholder: 'Are you born again? *', required: true }
         ];
       case t('registerForIFCMEducationalProgram'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber'), required: true },
-          { name: 'program', type: 'select', placeholder: t('programOfInterest'), required: true, options: ['Bible Study', 'Leadership Training', 'Ministry School', 'Theological Studies'] },
-          { name: 'experience', type: 'textarea', placeholder: t('previousMinistryExperience'), rows: 3 },
-          { name: 'expectations', type: 'textarea', placeholder: t('whatDoYouHopeToGain'), rows: 3 }
+          { name: 'fullName', type: 'text', placeholder: 'Full Name *', required: true },
+          { name: 'email', type: 'email', placeholder: 'Email Address *', required: true },
+          { name: 'gender', type: 'select', placeholder: 'Gender *', required: true, options: ['Male', 'Female'] },
+          { name: 'phone', type: 'tel', placeholder: 'Phone Number (indicate for both WhatsApp and calls only) *', required: true },
+          { name: 'ageBracket', type: 'select', placeholder: 'Age bracket *', required: true, options: ['16-19', '20-25', '26-35', '36-45', '46 and above'] },
+          { name: 'ageGroup', type: 'text', placeholder: 'Age Group', required: false },
+          { name: 'program', type: 'select', placeholder: 'Which of the IFCM Educational programs are you registering for? *', required: true, options: ['Foundation school', 'Ministry school', 'Baptismal classes (Select Class)'] },
+          { name: 'questions', type: 'textarea', placeholder: 'Please drop your questions or inquiries here.', rows: 3 }
         ];
       case t('counselingAppointment'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber'), required: true },
-          { name: 'preferredDate', type: 'date', placeholder: t('preferredDate'), required: true },
-          { name: 'preferredTime', type: 'select', placeholder: t('preferredTime'), options: ['Morning (9-12)', 'Afternoon (12-5)', 'Evening (5-8)'] },
-          { name: 'counselingType', type: 'select', placeholder: t('typeOfCounseling'), options: ['Marriage', 'Family', 'Personal', 'Spiritual', 'Career', 'Other'] },
-          { name: 'issue', type: 'textarea', placeholder: t('briefDescriptionOfIssue'), required: true, rows: 4 }
+          { name: 'firstName', type: 'text', placeholder: 'First *', required: true },
+          { name: 'lastName', type: 'text', placeholder: 'Last *', required: true },
+          { name: 'email', type: 'email', placeholder: 'Email *', required: true },
+          { name: 'phone', type: 'tel', placeholder: 'Phone Number *', required: true },
+          { name: 'churchMember', type: 'select', placeholder: 'Are you a member of the church? *', required: true, options: ['--- choose ---', 'Yes', 'No'] },
+          { name: 'reason', type: 'select', placeholder: 'Reason for appointment *', required: true, options: ['Relationship', 'Marriage', 'spiritual', 'others " specify please"'] },
+          { name: 'message', type: 'textarea', placeholder: 'Leave a message *', required: true, rows: 4 }
         ];
       case t('joinAServiceGroup'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber') },
-          { name: 'serviceGroup', type: 'select', placeholder: t('serviceGroup'), required: true, options: ['Worship Team', 'Ushering', 'Media', 'Children Ministry', 'Youth Ministry', 'Outreach', 'Hospitality'] },
-          { name: 'experience', type: 'textarea', placeholder: t('relevantExperienceOrSkills'), rows: 3 },
-          { name: 'availability', type: 'textarea', placeholder: t('availability'), rows: 2 }
+          { name: 'serviceGroup', type: 'select', placeholder: '(chose)', required: true, options: ['Choir', 'Usher', 'Media', 'Protocol', 'Evangelism', 'Santuary keeper', 'Interpretation'] }
         ];
       case t('preMaritalCounseling'):
         return [
-          { name: 'partner1Name', type: 'text', placeholder: t('partner1FullName'), required: true },
-          { name: 'partner1Email', type: 'email', placeholder: t('partner1Email'), required: true },
-          { name: 'partner1Phone', type: 'tel', placeholder: t('partner1Phone'), required: true },
-          { name: 'partner2Name', type: 'text', placeholder: t('partner2FullName'), required: true },
-          { name: 'partner2Email', type: 'email', placeholder: t('partner2Email'), required: true },
-          { name: 'partner2Phone', type: 'tel', placeholder: t('partner2Phone'), required: true },
-          { name: 'weddingDate', type: 'date', placeholder: t('expectedWeddingDate') },
-          { name: 'howLongDating', type: 'text', placeholder: t('howLongHaveYouBeenDating') },
-          { name: 'concerns', type: 'textarea', placeholder: t('anySpecificConcerns'), rows: 3 }
+          { name: 'firstName', type: 'text', placeholder: 'First *', required: true },
+          { name: 'lastName', type: 'text', placeholder: 'Last *', required: true },
+          { name: 'email', type: 'email', placeholder: 'Email *', required: true },
+          { name: 'phone', type: 'tel', placeholder: 'Phone Number', required: false },
+          { name: 'proposedWeddingDate', type: 'date', placeholder: 'Proposed Wedding Date *', required: true },
+          { name: 'churchMember', type: 'select', placeholder: 'Are you a member of the Church? *', required: true, options: ['Yes', 'No'] },
+          { name: 'missionalCommunity', type: 'text', placeholder: 'What IFCM Missional Community do you belong to? (please add the name of your MC Leader) *', required: true },
+          { name: 'department', type: 'text', placeholder: 'Department', required: false },
+          { name: 'notes', type: 'textarea', placeholder: 'Any note?', rows: 3 }
         ];
       case t('postMaritalCounseling'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber'), required: true },
-          { name: 'spouseName', type: 'text', placeholder: t('spouseName') },
-          { name: 'yearsMarried', type: 'number', placeholder: t('yearsMarried') },
-          { name: 'issues', type: 'textarea', placeholder: t('issuesToAddress'), required: true, rows: 4 }
+          { name: 'firstName', type: 'text', placeholder: 'First *', required: true },
+          { name: 'lastName', type: 'text', placeholder: 'Last *', required: true },
+          { name: 'email', type: 'email', placeholder: 'Email *', required: true },
+          { name: 'phone', type: 'tel', placeholder: 'Phone Number', required: false },
+          { name: 'membershipDuration', type: 'select', placeholder: 'How long have you been a member in IFCM? *', required: true, options: ['0 - 6 Months', '7 Months - 1 year', '2 years and above'] },
+          { name: 'marriageDuration', type: 'select', placeholder: 'How long have you been married? *', required: true, options: ['0 - 2 years', '3 - 5 years', '6 - 10 years', '10 years and above'] },
+          { name: 'hasChildren', type: 'select', placeholder: 'Do you have children? *', required: true, options: ['Yes', 'NO'] },
+          { name: 'notes', type: 'textarea', placeholder: 'Any note?', rows: 3 }
         ];
       case t('childDedication'):
         return [
-          { name: 'parent1Name', type: 'text', placeholder: t('parent1FullName'), required: true },
-          { name: 'parent1Email', type: 'email', placeholder: t('parent1Email'), required: true },
-          { name: 'parent1Phone', type: 'tel', placeholder: t('parent1Phone'), required: true },
-          { name: 'parent2Name', type: 'text', placeholder: t('parent2FullName') },
-          { name: 'parent2Email', type: 'email', placeholder: t('parent2Email') },
-          { name: 'parent2Phone', type: 'tel', placeholder: t('parent2Phone') },
-          { name: 'childName', type: 'text', placeholder: t('childFullName'), required: true },
-          { name: 'childDOB', type: 'date', placeholder: t('childDateOfBirth'), required: true },
-          { name: 'address', type: 'text', placeholder: t('address'), required: true }
+          { name: 'fatherFirstName', type: 'text', placeholder: 'Father Name First', required: false },
+          { name: 'fatherLastName', type: 'text', placeholder: 'Father Name Last', required: false },
+          { name: 'fatherContact', type: 'tel', placeholder: 'contact', required: false },
+          { name: 'motherFirstName', type: 'text', placeholder: 'Mother Name First', required: false },
+          { name: 'motherLastName', type: 'text', placeholder: 'Mother Name Last', required: false },
+          { name: 'motherContact', type: 'tel', placeholder: 'Contact', required: false },
+          { name: 'childFirstName', type: 'text', placeholder: 'Child Name First', required: false },
+          { name: 'childLastName', type: 'text', placeholder: 'Child Name Last', required: false },
+          { name: 'dateOfBirth', type: 'date', placeholder: 'Date of birth', required: false },
+          { name: 'ageRange', type: 'select', placeholder: 'Age range', required: false, options: ['0 - 3 months', '4 - 7 months', '8 - 1 year', '1 year and above'] },
+          { name: 'placeOfBirth', type: 'text', placeholder: 'Place of birth', required: false },
+          { name: 'residentialAddress', type: 'text', placeholder: 'Residents address', required: false }
         ];
       case t('invitedGuestForm'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber') },
-          { name: 'event', type: 'text', placeholder: t('eventServiceAttending'), required: true },
-          { name: 'guests', type: 'number', placeholder: t('numberOfGuests') },
-          { name: 'specialNeeds', type: 'textarea', placeholder: t('specialNeeds'), rows: 2 }
+          { name: 'name', type: 'text', placeholder: 'Your Name *', required: true },
+          { name: 'phone', type: 'tel', placeholder: 'Your Phone Number *', required: true },
+          { name: 'invitees', type: 'textarea', placeholder: 'Name and phone number of invitees * example: James Martins (0812 319 6675) Name followed by phone number (one per line)(Big box)', required: true, rows: 4 },
+          { name: 'invitationDate', type: 'date', placeholder: 'Date of invitation *', required: true }
         ];
       case t('myAnsweredPrayerSlip'):
         return [
-          { name: 'name', type: 'text', placeholder: t('fullName'), required: true },
-          { name: 'email', type: 'email', placeholder: t('emailAddress'), required: true },
-          { name: 'phone', type: 'tel', placeholder: t('phoneNumber') },
-          { name: 'prayerRequest', type: 'textarea', placeholder: t('originalPrayerRequest'), required: true, rows: 3 },
-          { name: 'testimony', type: 'textarea', placeholder: t('howGodAnswered'), required: true, rows: 4 },
-          { name: 'dateAnswered', type: 'date', placeholder: t('dateAnswered') }
+          { name: 'answeredPrayers', type: 'textarea', placeholder: 'List Of Answered Prayers with events name', required: false, rows: 4 }
         ];
       default:
         return [
@@ -167,6 +198,24 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
         onClose();
         // Trigger page refresh to show new testimony
         window.location.reload();
+      } else if (selectedForm === t('membershipForm') || selectedForm === 'trueMemberRecognition') {
+        // Store membership data locally on the website
+        const existingMembers = JSON.parse(localStorage.getItem('ifcmMembers') || '[]');
+        const newMember = {
+          ...formData,
+          formType: selectedForm,
+          submittedAt: new Date().toISOString()
+        };
+        existingMembers.push(newMember);
+        localStorage.setItem('ifcmMembers', JSON.stringify(existingMembers));
+
+        alert(`Thank you for submitting the ${selectedForm} form! Your information has been stored on the website.`);
+        const initialData = {};
+        fields.forEach(field => {
+          initialData[field.name] = '';
+        });
+        setFormData(initialData);
+        onClose();
       } else {
         try {
           let message = `Form Type: ${selectedForm}\n\n`;
@@ -241,6 +290,16 @@ export default function FormModal({ isOpen, onClose, selectedForm }) {
                       <option key={optIdx} value={option}>{option}</option>
                     ))}
                   </select>
+                ) : field.type === 'checkbox' ? (
+                  <div className="flex items-center">
+                    <input
+                      type="checkbox"
+                      required={field.required}
+                      onChange={(e) => setFormData({...formData, [field.name]: e.target.checked})}
+                      className="mr-2"
+                    />
+                    <label className="text-gray-700">{field.placeholder}</label>
+                  </div>
                 ) : field.type === 'file' ? (
                   <input
                     type="file"

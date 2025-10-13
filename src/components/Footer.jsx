@@ -72,7 +72,7 @@ export default function Footer() {
             {t('motto')}
           </p>
           <p className="text-amber-600 font-semibold text-sm mt-2">
-            {t('solo')}
+            {t('slogan')}
           </p>
         </div>
       </div>
