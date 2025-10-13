@@ -35,7 +35,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage openFormModal={openFormModal} />} />
-            <Route path="about" element={<About />} />
+            <Route path="about" element={<About openFormModal={openFormModal} />} />
             <Route path="services" element={<Services />} />
             <Route path="ministries" element={<Ministries />} />
             <Route path="events" element={<Events />} />
