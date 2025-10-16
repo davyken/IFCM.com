@@ -158,7 +158,7 @@ export default function HomePage({ openFormModal }) {
   return (
     <>
       <Hero />
-      <About />
+      <About openFormModal={openFormModal} />
       <Services />
       <Ministries />
       <Events />

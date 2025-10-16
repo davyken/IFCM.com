@@ -117,7 +117,6 @@ export const LanguageProvider = memo(({ children }) => {
       howToBecomeMember: 'HOW TO BECOME A CHURCH MEMBER',
       memberIntro: 'To become a member of a church is to formally commit oneself to an identifiable body of believers who have joined together for specific, divinely ordained purposes and to fellowship as one. A person wishing to be a member of IFCM must give a credible profession of faith in Christ and;',
       memberRequirements: '- Accept the beliefs of the church - Meet the church requirements for Baptism - Acknowledge the responsibilities of a church member - Abide by the decision of the members - Be committed to serving Christ within the church and beyond.',
-      memberFormNote: '-As you join us to fellowship and serve God, we would love you to fill in the following so we recognise you as a true member of IFCM: *(a form has to be created for people to fill which will include: the name, address, phone number, email, status, age). *Are you born again, if yes tick the box (a check box needs to be put here) if not, click this link.',
       motto: 'The Motto: Restoration, Manifestation, teaching Spiritual Realities.',
       slogan: 'The Slogan: Solo: Increasing Faith of Christ Ministry, All: We are an Increase.',
       ministriesAbout: 'Ministries',
